@@ -26,3 +26,4 @@ replay_pid*
 # folders
 .vscode
 bin/
+src/test/
