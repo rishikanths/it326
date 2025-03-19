@@ -7,6 +7,7 @@ public class Adapter extends StringWriter {
 	public Adapter(String name){
 		super(name);
 	}
+	@Override
 	public void write(String name){
 		super.write(name);
 		writeToCharacter(name);
