@@ -1,12 +1,13 @@
 package patterns.structural.Decorator;
 
-public interface Coffee {
+public abstract class Coffee {
 
-	public void make();
+	protected double price = 0.0;
+	public abstract void make();
 	
-	public double getPrice();
+	public abstract double getPrice();
 	
-	public void addPrice(double d);
+	public abstract double addPrice(double d);
 	
-	public String getDescription();
+	public abstract String getDescription();
 }

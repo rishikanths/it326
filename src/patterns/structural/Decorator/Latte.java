@@ -1,9 +1,6 @@
 package patterns.structural.Decorator;
 
-public class Latte implements Coffee {
-
-	protected double price;
-	
+public class Latte extends Coffee {	
 	public Latte(double p) {
 		this.price = p;
 	}
@@ -19,8 +16,9 @@ public class Latte implements Coffee {
 	}
 	
 	@Override
-	public void addPrice(double d) {
+	public double addPrice(double d) {
 		this.price +=d;
+		return this.price;
 	}
 
 	@Override

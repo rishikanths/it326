@@ -1,25 +1,25 @@
 package patterns.structural.Decorator;
 
-public  abstract class CoffeeAdons implements Coffee{
-	protected Coffee coffee;
+public  abstract class CoffeeAdons extends Coffee{
+	protected Coffee baseCoffee;
 	
 	public CoffeeAdons(Coffee coffee) {
-		this.coffee = coffee;
+		this.baseCoffee = coffee;
 	}
 	@Override
 	public void make() {
-		coffee.make();
+		baseCoffee.make();
 	}
 	@Override
 	public double getPrice() {
-		return coffee.getPrice();
+		return baseCoffee.getPrice();
 	}
 	@Override
-	public void addPrice(double d) {
-		this.coffee.addPrice(d);
+	public double addPrice(double d) {
+		return this.baseCoffee.addPrice(d);
 	}
 	@Override
 	public String getDescription() {
-		return coffee.getDescription();
+		return baseCoffee.getDescription();
 	}
 }

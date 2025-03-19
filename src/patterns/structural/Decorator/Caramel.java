@@ -15,12 +15,8 @@ public class Caramel extends CoffeeAdons{
 	}
 	@Override
 	public double getPrice() {
-		addCost();
-		return coffee.getPrice();
+		return baseCoffee.addPrice(this.price);
 		
-	}
-	private void addCost() {
-		this.coffee.addPrice(this.price);
 	}
 	@Override
 	public String getDescription() {

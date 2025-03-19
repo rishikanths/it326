@@ -16,11 +16,7 @@ public class Expresso extends CoffeeAdons{
 	}
 	@Override
 	public double getPrice() {
-		addCost();
-		return coffee.getPrice();	
-	}
-	private void addCost() {
-		this.coffee.addPrice(this.price);
+		return baseCoffee.addPrice(this.price);	
 	}
 	@Override
 	public String getDescription() {

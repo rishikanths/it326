@@ -2,8 +2,6 @@ package patterns.creational.AbrtactFactory.generalmotors.cars;
 
 public class Corvette extends SportsCar {
 
-    private CarBuilder builder = null;
-
     public Corvette(CarBuilder builder) {
         super(builder);
         this.horsePower = builder.horsePower;
