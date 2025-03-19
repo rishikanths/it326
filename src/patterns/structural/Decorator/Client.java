@@ -17,6 +17,5 @@ public class Client {
 		myCoffee= new Expresso(myCoffee, 3.00);
 		System.out.println(myCoffee.getDescription());
         System.out.println(" Expresso Cost -"+myCoffee.getPrice());
-		
 	}
 }
