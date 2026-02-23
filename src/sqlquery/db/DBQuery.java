@@ -4,8 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import sqlquery.model.Player;
+import sqlquery.model.Team;
 
 public class DBQuery {
 
@@ -17,14 +19,15 @@ public class DBQuery {
 
     public void findPlayer(String name) throws SQLException {
 
-        String sql = "SELECT * FROM player WHERE first_name LIKE ?";
+        String sql = "SELECT * FROM player as p, teams as t "+
+                        "WHERE p.team_id = t.id and p.first_name LIKE ?";
         try {
             PreparedStatement pstmt = this.connection.prepareStatement(sql);
             pstmt.setString(1, name);
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                System.out.println("Found player: " + rs.getString("first_name"));
+                List<Player> players = QueryObject.createPlayer(rs);
             }
             rs.close();
             pstmt.close();
@@ -56,17 +59,4 @@ public class DBQuery {
         }
     }
 
-    public static void main(String[] args) {
-        try {
-            DBQuery dbQuery = new DBQuery();
-            dbQuery.findPlayer("Kat%");
-
-            //Team team = new Team("XlpM0XkE", "Golf");
-            //Player newPlayer = new Player("IT326", "John", "Doe", 10, "Guard", team, true);
-            //dbQuery.addPlayer(newPlayer);
-
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-    }
 }

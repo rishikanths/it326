@@ -10,17 +10,6 @@ public class Player {
     private Team team;
     private boolean active;
 
-
-    public Player(String id, String firstName, String lastName, int number, String position, Team team, boolean active) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.number = number;
-        this.position = position;
-        this.team = team;
-        this.active = active;
-    }
-
     public String getId() {
         return id;
     }
