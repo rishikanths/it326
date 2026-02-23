@@ -21,6 +21,8 @@ public class Team {
     @OneToMany(mappedBy = "team")
     private List<Player> players;
 
+    public Team(){}
+
     public Team(String id, String name) {
         this.id = id;
         this.name = name;

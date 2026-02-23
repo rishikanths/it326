@@ -21,13 +21,11 @@ public class Driver {
         query.setMaxResults(20);
         List<Player> players = query.getResultList();
         for (Player player : players) {
-            System.out.println(player.getFirstName() + " " + player.getLastName());
+            System.out.println(player.getFirstName());
         }
-
     }
 
     public static void criteriaQuery() {
-
         Session session = HibernateUtil.getSessionFactory().openSession();
         CriteriaBuilder cb = session.getCriteriaBuilder();
         CriteriaQuery<Player> cq = cb.createQuery(Player.class);
@@ -40,7 +38,7 @@ public class Driver {
         List<Player> results = typedQuery.getResultList();
        
         for (Player player : results) {
-            System.out.println(player.getFirstName() + " " + player.getLastName());
+            System.out.println(player.getFirstName());
         }
 
     }
