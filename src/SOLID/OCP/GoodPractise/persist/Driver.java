@@ -6,6 +6,7 @@ public class Driver {
 
         Persistance p = new Database();
         p.save(null);
+        
         p = new CSV("/data/test.csv");
         p.save(null);
 

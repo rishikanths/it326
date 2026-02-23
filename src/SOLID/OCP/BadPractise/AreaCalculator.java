@@ -16,5 +16,8 @@ public class AreaCalculator {
     public static void area(Square sq){
         System.out.println(sq.area());
     }
+    public static void area(Triangle tr){
+        System.out.println(tr.area());
+    }
 
 }

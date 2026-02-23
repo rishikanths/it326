@@ -11,7 +11,9 @@ public class Driver {
 
         Square sq = new Square(10);
         AreaCalculator.area(sq);
-
+        
+        Triangle t = new Triangle(10,10);
+        AreaCalculator.area(t);
     }
 
 }
