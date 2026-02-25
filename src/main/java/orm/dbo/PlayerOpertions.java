@@ -18,7 +18,7 @@ public class PlayerOpertions {
 
         Session session = HibernateUtil.getSessionFactory().openSession();
         Query query = session.createQuery("FROM Player", Player.class);
-        query.setMaxResults(20);
+        query.setMaxResults(5);
         List<Player> players = query.getResultList();
         for (Player player : players) {
             System.out.println(player.getFirstName());
